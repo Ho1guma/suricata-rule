@@ -20,3 +20,6 @@ alert tcp any any -> any 80 (msg:"ulsan Metropolitan City access"; content:"GET 
 alert tcp any any -> any 80 (msg:"gwangju Metropolitan City access"; content:"GET /"; content:"Host: "; content: "gwangju.go.kr"; sid:10018; rev:1;)
 alert tcp any any -> any 80 (msg:"daejeon Metropolitan City access"; content:"GET /"; content:"Host: "; content: "daejeon.go.kr"; sid:10019; rev:1;)
 alert tcp any any -> any 80 (msg:"jeju do access"; content:"GET /"; content:"Host: "; content: "jeju.go.kr"; sid:10020; rev:1;)
+
+alert tcp any any -> any 443 (msg:"daum.net access"; flow:to_server,established; tls_sni; content:"daum"; sid:10021; rev:1;)
+alert udp any any -> any any (msg:"google access"; content:"google"; sid:10023; rev:1;)
